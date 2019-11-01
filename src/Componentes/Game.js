@@ -1,6 +1,5 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Board from './Board';
@@ -11,18 +10,24 @@ import Pets from '@material-ui/icons/Pets';
 
 
 class Game extends React.Component{
-    state ={
-        estado: 'Jugador siguiente X'
-    }
 
-    cambiarEstado(){
+    constructor(props) {
+        super(props);
+        this.state = {
+            estado: 'Jugador siguiente X'
+        };
+      }
+      
+     cambiarEstado(){
         var status= '';
+       
+        status = ('Jugador siguiente X'.localeCompare(this.state.estado) === 0 ? 'Jugador siguiente O' : 'Jugador siguiente X');
+        console.log('LLEGO AL CAMBIAR ESTADO DE GAME');
         console.log(this.state.estado);
-        status = ('Jugador siguiente X'.localeCompare(this.state.estado) == 0 ? 'Jugador siguiente O' : 'Jugador siguiente X');
         console.log(status);
         console.log('Jugador siguiente X'.localeCompare(this.state.estado));
         console.log('Jugador siguiente O'.localeCompare(this.state.estado));
-        this.setState=({
+        this.setState({
             estado:status
         });
     }
@@ -41,7 +46,7 @@ class Game extends React.Component{
                 <Grid item xs={5} >
                     <Typography variant="h4" gutterBottom color="secondary">
                          <SportsEsportsIcon fontSize="large" color="secondary">
-                         </SportsEsportsIcon>{this.state.estado}
+                         </SportsEsportsIcon>Juego del Gato
                          <Pets fontSize="large" color="secondary">
                          </Pets>   
                     </Typography>
