@@ -47,8 +47,7 @@ class Game extends React.Component{
                     <Typography variant="h4" gutterBottom color="secondary">
                          <SportsEsportsIcon fontSize="large" color="secondary">
                          </SportsEsportsIcon>Juego del Gato
-                         <Pets fontSize="large" color="secondary">
-                         </Pets>   
+                            
                     </Typography>
                     {this.state.estado}
                 </Grid>
